@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Books - OMI'S Library</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --accent-color: #e74c3c;
+            --light-color: #ecf0f1;
+            --dark-color: #2c3e50;
+            --text-color: #34495e;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Playfair Display', serif;
+        }
+
+        /* Navigation */
+        .navbar {
+            background-color: var(--primary-color);
+            padding: 1rem 2rem;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: var(--shadow);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            color: white;
+            font-size: 1.5rem;
+            font-weight: 700;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 1rem;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--secondary-color);
+        }
+
+        .auth-buttons {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .auth-btn {
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .auth-btn.signin {
+            color: white;
+            border: 1px solid white;
+        }
+
+        .auth-btn.signup {
+            background-color: var(--secondary-color);
+            color: white;
+        }
+
+        .auth-btn:hover {
+            transform: translateY(-2px);
+        }
+
+        body {
+            background-color: var(--light-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            padding-top: 80px;
+        }
+
+        .books-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .books-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .books-header h1 {
+            color: var(--primary-color);
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .search-bar {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .search-bar input {
+            flex: 1;
+            padding: 0.8rem;
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            font-size: 1rem;
+        }
+
+        .search-bar button {
+            padding: 0.8rem 1.5rem;
+            background-color: var(--secondary-color);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .search-bar button:hover {
+            background-color: #2980b9;
+        }
+
+        .books-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .book-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease;
+        }
+
+        .book-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .book-image {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+        }
+
+        .book-info {
+            padding: 1.5rem;
+        }
+
+        .book-info h3 {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .book-info p {
+            color: var(--text-color);
+            margin-bottom: 1rem;
+        }
+
+        .book-status {
+            display: inline-block;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .status-available {
+            background-color: #2ecc71;
+            color: white;
+        }
+
+        .status-borrowed {
+            background-color: #e74c3c;
+            color: white;
+        }
+
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .nav-links {
+                flex-direction: column;
+                text-align: center;
+                gap: 1rem;
+            }
+
+            .search-bar {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">OMI'S Library</a>
+            <div class="nav-links">
+                <a href="about.html">About</a>
+                <a href="books.html">Books</a>
+                <a href="borrow.html">Borrow</a>
+                <a href="return.html">Return</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <div class="auth-buttons">
+                <a href="signin.html" class="auth-btn signin">Sign In</a>
+                <a href="signup.html" class="auth-btn signup">Sign Up</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="books-container">
+        <div class="books-header">
+            <h1>Our Collection</h1>
+            <p>Explore our vast collection of books</p>
+        </div>
+
+        <div class="search-bar">
+            <input type="text" placeholder="Search for books...">
+            <button><i class="fas fa-search"></i> Search</button>
+        </div>
+
+        <div class="books-grid">
+            <div class="book-card">
+                <img src="library images/library image1.jpg" alt="Book Cover" class="book-image">
+                <div class="book-info">
+                    <h3>The Great Gatsby</h3>
+                    <p>F. Scott Fitzgerald</p>
+                    <span class="book-status status-available">Available</span>
+                </div>
+            </div>
+
+            <div class="book-card">
+                <img src="library images/library image2.jpg" alt="Book Cover" class="book-image">
+                <div class="book-info">
+                    <h3>To Kill a Mockingbird</h3>
+                    <p>Harper Lee</p>
+                    <span class="book-status status-borrowed">Borrowed</span>
+                </div>
+            </div>
+
+            <div class="book-card">
+                <img src="library images/library image3.jpg" alt="Book Cover" class="book-image">
+                <div class="book-info">
+                    <h3>1984</h3>
+                    <p>George Orwell</p>
+                    <span class="book-status status-available">Available</span>
+                </div>
+            </div>
+
+            <div class="book-card">
+                <img src="library images/library image4.jpg" alt="Book Cover" class="book-image">
+                <div class="book-info">
+                    <h3>Pride and Prejudice</h3>
+                    <p>Jane Austen</p>
+                    <span class="book-status status-available">Available</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html> 

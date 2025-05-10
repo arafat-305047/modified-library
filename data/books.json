@@ -1,0 +1,46 @@
+{
+  "books": [
+    {
+      "id": "B001",
+      "title": "The Great Gatsby",
+      "author": "F. Scott Fitzgerald",
+      "category": "Fiction",
+      "isbn": "9780743273565",
+      "publisher": "Scribner",
+      "year": 1925,
+      "edition": 1,
+      "available": true,
+      "location": "Fiction-A1",
+      "description": "A story of the fabulously wealthy Jay Gatsby and his love for the beautiful Daisy Buchanan.",
+      "cover": "images/books/great-gatsby.jpg"
+    },
+    {
+      "id": "B002",
+      "title": "To Kill a Mockingbird",
+      "author": "Harper Lee",
+      "category": "Fiction",
+      "isbn": "9780446310789",
+      "publisher": "Grand Central Publishing",
+      "year": 1960,
+      "edition": 1,
+      "available": true,
+      "location": "Fiction-B2",
+      "description": "The story of racial injustice and the loss of innocence in the American South.",
+      "cover": "images/books/mockingbird.jpg"
+    },
+    {
+      "id": "B003",
+      "title": "1984",
+      "author": "George Orwell",
+      "category": "Science Fiction",
+      "isbn": "9780451524935",
+      "publisher": "Signet Classic",
+      "year": 1949,
+      "edition": 1,
+      "available": true,
+      "location": "SciFi-C3",
+      "description": "A dystopian social science fiction novel and cautionary tale.",
+      "cover": "images/books/1984.jpg"
+    }
+  ]
+} 

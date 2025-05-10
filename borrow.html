@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Borrow Books - OMI'S Library</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --accent-color: #e74c3c;
+            --light-color: #ecf0f1;
+            --dark-color: #2c3e50;
+            --text-color: #34495e;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Playfair Display', serif;
+        }
+
+        /* Navigation */
+        .navbar {
+            background-color: var(--primary-color);
+            padding: 1rem 2rem;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: var(--shadow);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            color: white;
+            font-size: 1.5rem;
+            font-weight: 700;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 1rem;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--secondary-color);
+        }
+
+        .auth-buttons {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .auth-btn {
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .auth-btn.signin {
+            color: white;
+            border: 1px solid white;
+        }
+
+        .auth-btn.signup {
+            background-color: var(--secondary-color);
+            color: white;
+        }
+
+        .auth-btn:hover {
+            transform: translateY(-2px);
+        }
+
+        body {
+            background-color: var(--light-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            padding-top: 80px;
+        }
+
+        .borrow-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .borrow-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .borrow-header h1 {
+            color: var(--primary-color);
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .borrow-form {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--text-color);
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 0.8rem;
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus {
+            border-color: var(--secondary-color);
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+        }
+
+        .borrow-btn {
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+
+        .borrow-btn:hover {
+            background-color: #2980b9;
+            transform: translateY(-2px);
+        }
+
+        .borrow-info {
+            margin-top: 2rem;
+            padding: 1.5rem;
+            background: var(--light-color);
+            border-radius: 8px;
+        }
+
+        .borrow-info h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .borrow-info ul {
+            list-style: none;
+        }
+
+        .borrow-info li {
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .borrow-info i {
+            color: var(--secondary-color);
+        }
+
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .nav-links {
+                flex-direction: column;
+                text-align: center;
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">OMI'S Library</a>
+            <div class="nav-links">
+                <a href="about.html">About</a>
+                <a href="books.html">Books</a>
+                <a href="borrow.html">Borrow</a>
+                <a href="return.html">Return</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <div class="auth-buttons">
+                <a href="signin.html" class="auth-btn signin">Sign In</a>
+                <a href="signup.html" class="auth-btn signup">Sign Up</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="borrow-container">
+        <div class="borrow-header">
+            <h1>Borrow Books</h1>
+            <p>Fill out the form below to borrow books from our library</p>
+        </div>
+
+        <form class="borrow-form">
+            <div class="form-group">
+                <label for="studentId">Student ID</label>
+                <input type="text" id="studentId" name="studentId" required placeholder="Enter your student ID">
+            </div>
+
+            <div class="form-group">
+                <label for="bookId">Book ID</label>
+                <input type="text" id="bookId" name="bookId" required placeholder="Enter the book ID">
+            </div>
+
+            <div class="form-group">
+                <label for="borrowDate">Borrow Date</label>
+                <input type="date" id="borrowDate" name="borrowDate" required>
+            </div>
+
+            <div class="form-group">
+                <label for="returnDate">Expected Return Date</label>
+                <input type="date" id="returnDate" name="returnDate" required>
+            </div>
+
+            <button type="submit" class="borrow-btn">Borrow Book</button>
+        </form>
+
+        <div class="borrow-info">
+            <h3>Borrowing Guidelines</h3>
+            <ul>
+                <li><i class="fas fa-check-circle"></i> Maximum 3 books can be borrowed at a time</li>
+                <li><i class="fas fa-check-circle"></i> Books can be borrowed for up to 14 days</li>
+                <li><i class="fas fa-check-circle"></i> Renewal is possible if no one has reserved the book</li>
+                <li><i class="fas fa-check-circle"></i> Late returns will incur fines</li>
+                <li><i class="fas fa-check-circle"></i> Damaged books must be reported immediately</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html> 
