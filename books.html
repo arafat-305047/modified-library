@@ -149,6 +149,7 @@
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
             gap: 2rem;
+            margin-bottom: 3rem;
         }
 
         .book-card {
@@ -157,6 +158,7 @@
             overflow: hidden;
             box-shadow: var(--shadow);
             transition: transform 0.3s ease;
+            position: relative;
         }
 
         .book-card:hover {
@@ -201,6 +203,282 @@
             color: white;
         }
 
+        .read-more-btn {
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-block;
+            text-decoration: none;
+            margin-top: 1rem;
+        }
+
+        .read-more-btn:hover {
+            background-color: #2980b9;
+            transform: translateY(-2px);
+        }
+
+        /* Book Details Modal */
+        .book-details-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index: 2000;
+            overflow-y: auto;
+        }
+
+        .modal-content {
+            background-color: white;
+            margin: 50px auto;
+            padding: 2rem;
+            width: 90%;
+            max-width: 800px;
+            border-radius: 10px;
+            position: relative;
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--text-color);
+        }
+
+        .book-details {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 2rem;
+        }
+
+        .book-details-image {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .book-details-info h2 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .book-details-info p {
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+
+        .book-meta {
+            margin: 1.5rem 0;
+            padding: 1rem;
+            background-color: var(--light-color);
+            border-radius: 8px;
+        }
+
+        .book-meta p {
+            margin-bottom: 0.5rem;
+        }
+
+        .borrow-request-btn {
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 1rem;
+        }
+
+        .borrow-request-btn:hover {
+            background-color: #2980b9;
+            transform: translateY(-2px);
+        }
+
+        /* Request Book Modal Styles */
+        .request-book-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index: 2000;
+            overflow-y: auto;
+        }
+
+        .request-form {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            max-width: 600px;
+            margin: 50px auto;
+            position: relative;
+        }
+
+        .request-form h2 {
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .request-form .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .request-form label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--text-color);
+            font-weight: 500;
+        }
+
+        .request-form input,
+        .request-form textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .request-form textarea {
+            height: 120px;
+            resize: vertical;
+        }
+
+        .request-form input:focus,
+        .request-form textarea:focus {
+            border-color: var(--secondary-color);
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+        }
+
+        .request-btn {
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+
+        .request-btn:hover {
+            background-color: #2980b9;
+            transform: translateY(-2px);
+        }
+
+        .thank-you-message {
+            display: none;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .thank-you-message h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .thank-you-message p {
+            color: var(--text-color);
+            margin-bottom: 1.5rem;
+        }
+
+        .close-request-modal {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--text-color);
+        }
+
+        .request-book-btn {
+            background-color: var(--accent-color);
+            color: white;
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-block;
+            text-decoration: none;
+            margin-top: 1rem;
+            margin-left: 1rem;
+        }
+
+        .request-book-btn:hover {
+            background-color: #c0392b;
+            transform: translateY(-2px);
+        }
+
+        /* Footer Styles */
+        .footer {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 3rem 0;
+            margin-top: 4rem;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .footer-section h3 {
+            color: white;
+            margin-bottom: 1.5rem;
+            font-size: 1.2rem;
+        }
+
+        .footer-section p {
+            color: #ecf0f1;
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-links a {
+            color: white;
+            font-size: 1.5rem;
+            transition: color 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: var(--secondary-color);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            margin-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
         @media (max-width: 768px) {
             .nav-container {
                 flex-direction: column;
@@ -216,6 +494,64 @@
             .search-bar {
                 flex-direction: column;
             }
+
+            .footer-container {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .social-links {
+                justify-content: center;
+            }
+
+            .book-details {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Request Book Section Styles */
+        .request-book-section {
+            background: white;
+            padding: 3rem;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            text-align: center;
+            margin: 2rem auto;
+            max-width: 800px;
+        }
+
+        .request-book-section h2 {
+            color: var(--primary-color);
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .request-book-section p {
+            color: var(--text-color);
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+        }
+
+        .request-book-section .request-book-btn {
+            background-color: var(--accent-color);
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-block;
+            text-decoration: none;
+        }
+
+        .request-book-section .request-book-btn:hover {
+            background-color: #c0392b;
+            transform: translateY(-2px);
+        }
+
+        .request-book-section .request-book-btn i {
+            margin-right: 0.5rem;
         }
     </style>
 </head>
@@ -249,42 +585,447 @@
         </div>
 
         <div class="books-grid">
-            <div class="book-card">
-                <img src="library images/library image1.jpg" alt="Book Cover" class="book-image">
+            <div class="book-card" data-book-id="B001">
+                <img src="https://images.unsplash.com/photo-1544947950-fa07a98d237f?ixlib=rb-4.0.3" alt="The Great Gatsby" class="book-image">
                 <div class="book-info">
                     <h3>The Great Gatsby</h3>
-                    <p>F. Scott Fitzgerald</p>
+                    <p>Book ID: B001</p>
+                    <p>Author: F. Scott Fitzgerald</p>
+                    <p>Genre: Classic Fiction</p>
                     <span class="book-status status-available">Available</span>
+                    <a href="#" class="read-more-btn" onclick="showBookDetails('B001')">Read More</a>
                 </div>
             </div>
 
-            <div class="book-card">
-                <img src="library images/library image2.jpg" alt="Book Cover" class="book-image">
+            <div class="book-card" data-book-id="B002">
+                <img src="https://images.unsplash.com/photo-1541963463532-d68292c34b19?ixlib=rb-4.0.3" alt="To Kill a Mockingbird" class="book-image">
                 <div class="book-info">
                     <h3>To Kill a Mockingbird</h3>
-                    <p>Harper Lee</p>
-                    <span class="book-status status-borrowed">Borrowed</span>
+                    <p>Book ID: B002</p>
+                    <p>Author: Harper Lee</p>
+                    <p>Genre: Classic Fiction</p>
+                    <span class="book-status status-available">Available</span>
+                    <a href="#" class="read-more-btn" onclick="showBookDetails('B002')">Read More</a>
                 </div>
             </div>
 
-            <div class="book-card">
-                <img src="library images/library image3.jpg" alt="Book Cover" class="book-image">
+            <div class="book-card" data-book-id="B003">
+                <img src="https://images.unsplash.com/photo-1543002588-bfa74002ed7e?ixlib=rb-4.0.3" alt="1984" class="book-image">
                 <div class="book-info">
                     <h3>1984</h3>
-                    <p>George Orwell</p>
-                    <span class="book-status status-available">Available</span>
+                    <p>Book ID: B003</p>
+                    <p>Author: George Orwell</p>
+                    <p>Genre: Dystopian Fiction</p>
+                    <span class="book-status status-borrowed">Borrowed</span>
+                    <a href="#" class="read-more-btn" onclick="showBookDetails('B003')">Read More</a>
                 </div>
             </div>
 
-            <div class="book-card">
-                <img src="library images/library image4.jpg" alt="Book Cover" class="book-image">
+            <div class="book-card" data-book-id="B004">
+                <img src="https://images.unsplash.com/photo-1512820790803-83ca734da794?ixlib=rb-4.0.3" alt="Pride and Prejudice" class="book-image">
                 <div class="book-info">
                     <h3>Pride and Prejudice</h3>
-                    <p>Jane Austen</p>
+                    <p>Book ID: B004</p>
+                    <p>Author: Jane Austen</p>
+                    <p>Genre: Romance</p>
                     <span class="book-status status-available">Available</span>
+                    <a href="#" class="read-more-btn" onclick="showBookDetails('B004')">Read More</a>
+                </div>
+            </div>
+
+            <div class="book-card" data-book-id="B005">
+                <img src="https://images.unsplash.com/photo-1541963463532-d68292c34b19?ixlib=rb-4.0.3" alt="The Hobbit" class="book-image">
+                <div class="book-info">
+                    <h3>The Hobbit</h3>
+                    <p>Book ID: B005</p>
+                    <p>Author: J.R.R. Tolkien</p>
+                    <p>Genre: Fantasy</p>
+                    <span class="book-status status-available">Available</span>
+                    <a href="#" class="read-more-btn" onclick="showBookDetails('B005')">Read More</a>
+                </div>
+            </div>
+
+            <div class="book-card" data-book-id="B006">
+                <img src="https://images.unsplash.com/photo-1544947950-fa07a98d237f?ixlib=rb-4.0.3" alt="The Catcher in the Rye" class="book-image">
+                <div class="book-info">
+                    <h3>The Catcher in the Rye</h3>
+                    <p>Book ID: B006</p>
+                    <p>Author: J.D. Salinger</p>
+                    <p>Genre: Coming-of-Age</p>
+                    <span class="book-status status-borrowed">Borrowed</span>
+                    <a href="#" class="read-more-btn" onclick="showBookDetails('B006')">Read More</a>
+                </div>
+            </div>
+
+            <div class="book-card" data-book-id="B007">
+                <img src="https://images.unsplash.com/photo-1543002588-bfa74002ed7e?ixlib=rb-4.0.3" alt="The Alchemist" class="book-image">
+                <div class="book-info">
+                    <h3>The Alchemist</h3>
+                    <p>Book ID: B007</p>
+                    <p>Author: Paulo Coelho</p>
+                    <p>Genre: Fiction</p>
+                    <span class="book-status status-available">Available</span>
+                    <a href="#" class="read-more-btn" onclick="showBookDetails('B007')">Read More</a>
+                </div>
+            </div>
+
+            <div class="book-card" data-book-id="B008">
+                <img src="https://images.unsplash.com/photo-1512820790803-83ca734da794?ixlib=rb-4.0.3" alt="The Little Prince" class="book-image">
+                <div class="book-info">
+                    <h3>The Little Prince</h3>
+                    <p>Book ID: B008</p>
+                    <p>Author: Antoine de Saint-Exupéry</p>
+                    <p>Genre: Fantasy</p>
+                    <span class="book-status status-available">Available</span>
+                    <a href="#" class="read-more-btn" onclick="showBookDetails('B008')">Read More</a>
+                </div>
+            </div>
+
+            <div class="book-card" data-book-id="B009">
+                <img src="https://images.unsplash.com/photo-1541963463532-d68292c34b19?ixlib=rb-4.0.3" alt="The Da Vinci Code" class="book-image">
+                <div class="book-info">
+                    <h3>The Da Vinci Code</h3>
+                    <p>Book ID: B009</p>
+                    <p>Author: Dan Brown</p>
+                    <p>Genre: Mystery</p>
+                    <span class="book-status status-borrowed">Borrowed</span>
+                    <a href="#" class="read-more-btn" onclick="showBookDetails('B009')">Read More</a>
+                </div>
+            </div>
+
+            <div class="book-card" data-book-id="B010">
+                <img src="https://images.unsplash.com/photo-1544947950-fa07a98d237f?ixlib=rb-4.0.3" alt="The Kite Runner" class="book-image">
+                <div class="book-info">
+                    <h3>The Kite Runner</h3>
+                    <p>Book ID: B010</p>
+                    <p>Author: Khaled Hosseini</p>
+                    <p>Genre: Historical Fiction</p>
+                    <span class="book-status status-available">Available</span>
+                    <a href="#" class="read-more-btn" onclick="showBookDetails('B010')">Read More</a>
+                </div>
+            </div>
+
+            <div class="book-card" data-book-id="B011">
+                <img src="https://images.unsplash.com/photo-1543002588-bfa74002ed7e?ixlib=rb-4.0.3" alt="The Book Thief" class="book-image">
+                <div class="book-info">
+                    <h3>The Book Thief</h3>
+                    <p>Book ID: B011</p>
+                    <p>Author: Markus Zusak</p>
+                    <p>Genre: Historical Fiction</p>
+                    <span class="book-status status-available">Available</span>
+                    <a href="#" class="read-more-btn" onclick="showBookDetails('B011')">Read More</a>
+                </div>
+            </div>
+
+            <div class="book-card" data-book-id="B012">
+                <img src="https://images.unsplash.com/photo-1512820790803-83ca734da794?ixlib=rb-4.0.3" alt="The Giver" class="book-image">
+                <div class="book-info">
+                    <h3>The Giver</h3>
+                    <p>Book ID: B012</p>
+                    <p>Author: Lois Lowry</p>
+                    <p>Genre: Dystopian Fiction</p>
+                    <span class="book-status status-borrowed">Borrowed</span>
+                    <a href="#" class="read-more-btn" onclick="showBookDetails('B012')">Read More</a>
                 </div>
             </div>
         </div>
     </div>
+
+    <!-- Request Book Section -->
+    <div class="request-book-section">
+        <h2>Can't Find What You're Looking For?</h2>
+        <p>If you don't see the book you're interested in, you can request it and we'll try to add it to our collection.</p>
+        <button class="request-book-btn" onclick="showRequestForm()">
+            <i class="fas fa-book"></i> Request a Book
+        </button>
+    </div>
+
+    <!-- Book Details Modal -->
+    <div id="bookDetailsModal" class="book-details-modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeBookDetails()">&times;</span>
+            <div class="book-details">
+                <img id="modalBookImage" src="" alt="" class="book-details-image">
+                <div class="book-details-info">
+                    <h2 id="modalBookTitle"></h2>
+                    <div class="book-meta">
+                        <p id="modalBookId"></p>
+                        <p id="modalBookAuthor"></p>
+                        <p id="modalBookGenre"></p>
+                        <p id="modalBookStatus"></p>
+                    </div>
+                    <p id="modalBookDescription"></p>
+                    <div class="button-group">
+                        <a href="borrow.html" class="borrow-request-btn" id="modalBorrowBtn">Borrow This Book</a>
+                        <button class="request-book-btn" onclick="showRequestForm()">Request Book</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Request Book Modal -->
+    <div id="requestBookModal" class="request-book-modal">
+        <div class="request-form">
+            <span class="close-request-modal" onclick="closeRequestForm()">&times;</span>
+            <div id="requestFormContent">
+                <h2>Request a Book</h2>
+                <form id="bookRequestForm" onsubmit="submitRequest(event)">
+                    <div class="form-group">
+                        <label for="requestName">Full Name</label>
+                        <input type="text" id="requestName" name="requestName" required placeholder="Enter your full name">
+                    </div>
+                    <div class="form-group">
+                        <label for="requestEmail">Email</label>
+                        <input type="email" id="requestEmail" name="requestEmail" required placeholder="Enter your email">
+                    </div>
+                    <div class="form-group">
+                        <label for="requestBookTitle">Book Title</label>
+                        <input type="text" id="requestBookTitle" name="requestBookTitle" required placeholder="Enter the book title">
+                    </div>
+                    <div class="form-group">
+                        <label for="requestAuthor">Author (if known)</label>
+                        <input type="text" id="requestAuthor" name="requestAuthor" placeholder="Enter the author's name">
+                    </div>
+                    <div class="form-group">
+                        <label for="requestReason">Reason for Request</label>
+                        <textarea id="requestReason" name="requestReason" required placeholder="Please explain why you would like to request this book"></textarea>
+                    </div>
+                    <button type="submit" class="request-btn">Submit Request</button>
+                </form>
+            </div>
+            <div id="thankYouMessage" class="thank-you-message">
+                <h3>Thank You for Your Request!</h3>
+                <p>We have received your book request and will review it shortly. We will contact you via email once we have an update.</p>
+                <button class="request-btn" onclick="closeRequestForm()">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>About OMI'S Library</h3>
+                <p>Your trusted source for knowledge and entertainment. We provide access to a vast collection of books and resources for our community.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p>Email: info@omislibrary.com</p>
+                <p>Phone: (123) 456-7890</p>
+                <p>Address: 123 Library Street, Booktown, BT 12345</p>
+            </div>
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 OMI'S Library. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Book data with descriptions
+        const booksData = {
+            'B001': {
+                title: 'The Great Gatsby',
+                author: 'F. Scott Fitzgerald',
+                genre: 'Classic Fiction',
+                status: 'Available',
+                image: 'https://images.unsplash.com/photo-1544947950-fa07a98d237f?ixlib=rb-4.0.3',
+                description: 'The Great Gatsby is a 1925 novel by American writer F. Scott Fitzgerald. Set in the Jazz Age on Long Island, the novel depicts narrator Nick Carraway\'s interactions with mysterious millionaire Jay Gatsby and Gatsby\'s obsession to reunite with his former lover, Daisy Buchanan.'
+            },
+            'B002': {
+                title: 'To Kill a Mockingbird',
+                author: 'Harper Lee',
+                genre: 'Classic Fiction',
+                status: 'Available',
+                image: 'https://images.unsplash.com/photo-1541963463532-d68292c34b19?ixlib=rb-4.0.3',
+                description: 'To Kill a Mockingbird is a novel by Harper Lee published in 1960. It was immediately successful, winning the Pulitzer Prize, and has become a classic of modern American literature. The plot and characters are loosely based on Lee\'s observations of her family, her neighbors and an event that occurred near her hometown of Monroeville, Alabama, in 1936.'
+            },
+            'B003': {
+                title: '1984',
+                author: 'George Orwell',
+                genre: 'Dystopian Fiction',
+                status: 'Borrowed',
+                image: 'https://images.unsplash.com/photo-1543002588-bfa74002ed7e?ixlib=rb-4.0.3',
+                description: '1984 is a dystopian social science fiction novel by English author George Orwell. It was published in 1949 to warn against totalitarianism and totalitarian governments, and is considered one of the most influential dystopian novels of the 20th century.'
+            },
+            'B004': {
+                title: 'Pride and Prejudice',
+                author: 'Jane Austen',
+                genre: 'Romance',
+                status: 'Available',
+                image: 'https://images.unsplash.com/photo-1512820790803-83ca734da794?ixlib=rb-4.0.3',
+                description: 'Pride and Prejudice is a romantic novel by Jane Austen, first published in 1813. The story follows the main character, Elizabeth Bennet, as she deals with issues of manners, upbringing, morality, education, and marriage in the society of the landed gentry of the British Regency.'
+            },
+            'B005': {
+                title: 'The Hobbit',
+                author: 'J.R.R. Tolkien',
+                genre: 'Fantasy',
+                status: 'Available',
+                image: 'https://images.unsplash.com/photo-1541963463532-d68292c34b19?ixlib=rb-4.0.3',
+                description: 'The Hobbit is a fantasy novel by English author J.R.R. Tolkien. It was published in 1937 to 1938 and follows the quest of Bilbo Baggins, a hobbit, to reclaim a stolen treasure from the dragon Smaug.'
+            },
+            'B006': {
+                title: 'The Catcher in the Rye',
+                author: 'J.D. Salinger',
+                genre: 'Coming-of-Age',
+                status: 'Borrowed',
+                image: 'https://images.unsplash.com/photo-1544947950-fa07a98d237f?ixlib=rb-4.0.3',
+                description: 'The Catcher in the Rye is a 1951 novel by American author J.D. Salinger. It was originally published for serial publication in the New Yorker, and was later published as a book in 1957.'
+            },
+            'B007': {
+                title: 'The Alchemist',
+                author: 'Paulo Coelho',
+                genre: 'Fiction',
+                status: 'Available',
+                image: 'https://images.unsplash.com/photo-1543002588-bfa74002ed7e?ixlib=rb-4.0.3',
+                description: 'The Alchemist is a novel by Brazilian author Paulo Coelho, first published in 1988. It tells the story of Santiago, an Andalusian shepherd boy who travels from his homeland in Spain to the Egyptian desert in search of a treasure buried near the Pyramids.'
+            },
+            'B008': {
+                title: 'The Little Prince',
+                author: 'Antoine de Saint-Exupéry',
+                genre: 'Fantasy',
+                status: 'Available',
+                image: 'https://images.unsplash.com/photo-1512820790803-83ca734da794?ixlib=rb-4.0.3',
+                description: 'The Little Prince is a novella by French aristocrat Antoine de Saint-Exupéry, published in 1943. It tells the story of a pilot who crashes in the Sahara Desert and meets a little prince who has come from another planet.'
+            },
+            'B009': {
+                title: 'The Da Vinci Code',
+                author: 'Dan Brown',
+                genre: 'Mystery',
+                status: 'Borrowed',
+                image: 'https://images.unsplash.com/photo-1541963463532-d68292c34b19?ixlib=rb-4.0.3',
+                description: 'The Da Vinci Code is a 2003 mystery thriller novel by American author Dan Brown. It follows symbologist Robert Langdon and cryptologist Sophie Neveu after a murder in the Louvre Museum in Paris.'
+            },
+            'B010': {
+                title: 'The Kite Runner',
+                author: 'Khaled Hosseini',
+                genre: 'Historical Fiction',
+                status: 'Available',
+                image: 'https://images.unsplash.com/photo-1544947950-fa07a98d237f?ixlib=rb-4.0.3',
+                description: 'The Kite Runner is a 2003 novel by Afghan-American author Khaled Hosseini. It tells the story of Amir, a young boy from the Wazir Akbar Khan district of Kabul, whose closest friend is Hassan.'
+            },
+            'B011': {
+                title: 'The Book Thief',
+                author: 'Markus Zusak',
+                genre: 'Historical Fiction',
+                status: 'Available',
+                image: 'https://images.unsplash.com/photo-1543002588-bfa74002ed7e?ixlib=rb-4.0.3',
+                description: 'The Book Thief is a historical fiction novel by Australian author Markus Zusak, published in 2005. It is set in Nazi Germany and tells the story of a foster family in the care of a Jewish bookseller.'
+            },
+            'B012': {
+                title: 'The Giver',
+                author: 'Lois Lowry',
+                genre: 'Dystopian Fiction',
+                status: 'Borrowed',
+                image: 'https://images.unsplash.com/photo-1512820790803-83ca734da794?ixlib=rb-4.0.3',
+                description: 'The Giver is a 1993 dystopian young adult novel by American author Lois Lowry. It is set in a fictional world in which all emotions have been eradicated except for "sameness" and "happiness."'
+            }
+        };
+
+        function showBookDetails(bookId) {
+            const book = booksData[bookId];
+            if (!book) return;
+
+            // Update modal content
+            document.getElementById('modalBookImage').src = book.image;
+            document.getElementById('modalBookTitle').textContent = book.title;
+            document.getElementById('modalBookId').textContent = `Book ID: ${bookId}`;
+            document.getElementById('modalBookAuthor').textContent = `Author: ${book.author}`;
+            document.getElementById('modalBookGenre').textContent = `Genre: ${book.genre}`;
+            document.getElementById('modalBookStatus').textContent = `Status: ${book.status}`;
+            document.getElementById('modalBookDescription').textContent = book.description;
+
+            // Update borrow button
+            const borrowBtn = document.getElementById('modalBorrowBtn');
+            if (book.status === 'Available') {
+                borrowBtn.href = `borrow.html?bookId=${bookId}`;
+                borrowBtn.style.display = 'inline-block';
+            } else {
+                borrowBtn.style.display = 'none';
+            }
+
+            // Show modal
+            document.getElementById('bookDetailsModal').style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeBookDetails() {
+            document.getElementById('bookDetailsModal').style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            const modal = document.getElementById('bookDetailsModal');
+            if (event.target === modal) {
+                closeBookDetails();
+            }
+        }
+
+        // Close modal with Escape key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeBookDetails();
+            }
+        });
+
+        function showRequestForm() {
+            document.getElementById('requestBookModal').style.display = 'block';
+            document.getElementById('requestFormContent').style.display = 'block';
+            document.getElementById('thankYouMessage').style.display = 'none';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeRequestForm() {
+            document.getElementById('requestBookModal').style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        function submitRequest(event) {
+            event.preventDefault();
+            
+            // Get form data
+            const formData = {
+                name: document.getElementById('requestName').value,
+                email: document.getElementById('requestEmail').value,
+                bookTitle: document.getElementById('requestBookTitle').value,
+                author: document.getElementById('requestAuthor').value,
+                reason: document.getElementById('requestReason').value
+            };
+
+            // Here you would typically send the data to a server
+            console.log('Book request submitted:', formData);
+
+            // Show thank you message
+            document.getElementById('requestFormContent').style.display = 'none';
+            document.getElementById('thankYouMessage').style.display = 'block';
+
+            // Reset form
+            document.getElementById('bookRequestForm').reset();
+        }
+
+        // Close request modal when clicking outside
+        window.onclick = function(event) {
+            const modal = document.getElementById('requestBookModal');
+            if (event.target === modal) {
+                closeRequestForm();
+            }
+        }
+
+        // Close request modal with Escape key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeRequestForm();
+            }
+        });
+    </script>
 </body>
 </html> 
