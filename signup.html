@@ -329,7 +329,7 @@
             <p>Join our library community today</p>
         </div>
 
-        <form action="#" method="POST">
+        <form id="signup-form" action="#" method="POST">
             <div class="form-row">
                 <div class="form-group">
                     <label for="firstName">First Name</label>
@@ -413,5 +413,18 @@
             <p>&copy; 2025 OMI'S Library. All rights reserved.</p>
         </div>
     </footer>
+    <script>
+document.addEventListener('DOMContentLoaded', function() {
+    var form = document.getElementById('signup-form');
+    if (form) {
+        form.onsubmit = function(e) {
+            e.preventDefault();
+            // You can add your signup logic here (e.g., save to localStorage)
+            alert("Welcome to OMI's Library!");
+            window.location.href = 'books.html';
+        };
+    }
+});
+</script>
 </body>
 </html> 

@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Study Room | OMI'S Library</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --accent-color: #e74c3c;
+            --light-color: #ecf0f1;
+            --dark-color: #2c3e50;
+            --text-color: #34495e;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Playfair Display', serif;
+        }
+        body {
+            background-color: var(--light-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+        .navbar {
+            background: rgba(44, 62, 80, 0.7);
+            padding: 1rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: var(--shadow);
+            backdrop-filter: blur(8px);
+            transition: background 0.3s;
+        }
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            color: white;
+            font-size: 1.5rem;
+            font-weight: 700;
+            text-decoration: none;
+        }
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 1rem;
+            transition: color 0.3s ease;
+        }
+        .nav-links a:hover {
+            color: var(--secondary-color);
+        }
+        .study-section { padding: 4rem 1rem 2rem; }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.18);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+            backdrop-filter: blur(8px);
+            border-radius: 16px;
+            border: 1px solid rgba(255,255,255,0.18);
+            padding: 2.5rem 2rem;
+            color: #2c3e50;
+            margin: 0 auto;
+            max-width: 500px;
+        }
+        .cta-button {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background-color: var(--secondary-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            border: none;
+            font-size: 1rem;
+            cursor: pointer;
+        }
+        .cta-button:hover {
+            background-color: #2980b9;
+            transform: translateY(-2px);
+        }
+        .form-title {
+            text-align: center;
+            margin-bottom: 2rem;
+            color: var(--primary-color);
+        }
+        .form-group {
+            margin-bottom: 1.2rem;
+            text-align: left;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 0.3rem;
+            font-weight: 500;
+        }
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 0.5rem;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            font-size: 1rem;
+        }
+        #study-success {
+            display: none;
+            margin-top: 1rem;
+            color: var(--secondary-color);
+            font-weight: bold;
+            text-align: center;
+        }
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            .nav-links {
+                flex-direction: column;
+                text-align: center;
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">OMI'S Library</a>
+            <div class="nav-links">
+                <a href="about.html">About</a>
+                <a href="books.html">Books</a>
+                <a href="opac.html">OPAC</a>
+                <a href="studyroom.html">Study Room</a>
+                <a href="contact.html">Contact</a>
+            </div>
+        </div>
+    </nav>
+    <section class="study-section">
+        <div class="glass-card">
+            <h2 class="form-title">Study Room Subscription</h2>
+            <form id="study-booking-form">
+                <div class="form-group">
+                    <label for="name">Your Name:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="date">Date:</label>
+                    <input type="date" id="date" name="date" required>
+                </div>
+                <div class="form-group">
+                    <label for="time">Time Slot:</label>
+                    <select id="time" name="time" required>
+                        <option value="">Select a time slot</option>
+                        <option value="8am-10am">8am - 10am</option>
+                        <option value="10am-12pm">10am - 12pm</option>
+                        <option value="12pm-2pm">12pm - 2pm</option>
+                        <option value="2pm-4pm">2pm - 4pm</option>
+                        <option value="4pm-6pm">4pm - 6pm</option>
+                    </select>
+                </div>
+                <button type="submit" class="cta-button" style="width:100%;">Book Now</button>
+            </form>
+            <div id="study-success">Your study room has been booked!</div>
+        </div>
+    </section>
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var form = document.getElementById('study-booking-form');
+        var successMsg = document.getElementById('study-success');
+        if (form && successMsg) {
+            form.onsubmit = function(e) {
+                e.preventDefault();
+                successMsg.style.display = 'block';
+                setTimeout(function() {
+                    form.reset();
+                    successMsg.style.display = 'none';
+                }, 2000);
+            };
+        }
+    });
+    </script>
+</body>
+</html> 
